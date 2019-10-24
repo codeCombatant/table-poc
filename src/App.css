@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -19,4 +20,11 @@
 
 .App-link {
   color: #09d3ac;
+}
+.ui.visible.uncover.sidebar{
+  width: 250px !important;
+  text-align: left;
+}
+.ui.labeled.icon.menu .item{
+  text-align: left !important;
 }

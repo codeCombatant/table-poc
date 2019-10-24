@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
 import DataTable from 'react-data-table-component';
  
-const data = [{ id: 1, title: 'Conan the Barbarian', year: '1982' }];
+const data = require('./sample.json');
 const columns = [
   {
-    name: 'Title',
-    selector: 'title',
+    name: 'Source',
+    selector: 'sourceFields',
     sortable: true,
+    maxWidth: '300px',
+    wrap: true,
   },
   {
-    name: 'Year',
-    selector: 'year',
+    name: 'Constant',
+    selector: 'constantValues',
     sortable: true,
-    right: true,
+    maxWidth: '300px',
+    wrap: true,
+  },
+  {
+    name: 'Function',
+    selector: 'functionS',
+    sortable: true,
+    maxWidth: '300px',
+    wrap: true,
+  },
+  {
+    name: 'Target',
+    selector: 'targetField',
+    sortable: true,
+    maxWidth: '300px',
+    wrap: true,
   },
 ];
  
 class TableComponent extends Component {
   render() {
+    console.log(this.props.tableData)
     return (
       <DataTable
-        columns={[...columns,...columns,...columns,...columns,]}
+        columns={[...columns]}
         pagination={true}
-        data={[...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data]}
+        data={this.props.tableData}
       />
     )
   }
